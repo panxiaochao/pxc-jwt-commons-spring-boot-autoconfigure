@@ -1,8 +1,8 @@
-package com.github.panxiaochao.config;
+package io.github.panxiaochao.config;
 
-import com.github.panxiaochao.properties.PxcJwtProperties;
-import com.github.panxiaochao.service.PxcJwtHandlerService;
-import com.github.panxiaochao.service.impl.PxcJwtHandlerServiceImpl;
+import io.github.panxiaochao.properties.PxcJwtProperties;
+import io.github.panxiaochao.service.PxcJwtHandlerService;
+import io.github.panxiaochao.service.impl.PxcJwtHandlerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;

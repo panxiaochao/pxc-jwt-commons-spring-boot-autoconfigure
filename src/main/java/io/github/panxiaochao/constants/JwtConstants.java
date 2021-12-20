@@ -1,4 +1,4 @@
-package com.github.panxiaochao.constants;
+package io.github.panxiaochao.constants;
 
 /**
  * @author Lypxc

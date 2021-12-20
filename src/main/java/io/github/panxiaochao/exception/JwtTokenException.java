@@ -1,4 +1,4 @@
-package com.github.panxiaochao.exception;
+package io.github.panxiaochao.exception;
 
 /**
  * @author Mr_LyPxc

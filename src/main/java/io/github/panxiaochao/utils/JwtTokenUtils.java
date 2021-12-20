@@ -1,7 +1,7 @@
-package com.github.panxiaochao.utils;
+package io.github.panxiaochao.utils;
 
-import com.github.panxiaochao.constants.JwtConstants;
-import com.github.panxiaochao.domain.Payload;
+import io.github.panxiaochao.constants.JwtConstants;
+import io.github.panxiaochao.domain.Payload;
 import io.jsonwebtoken.*;
 import org.apache.commons.codec.binary.Base64;
 import org.slf4j.Logger;

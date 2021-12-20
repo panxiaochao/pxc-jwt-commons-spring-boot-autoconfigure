@@ -1,6 +1,6 @@
-package com.github.panxiaochao.banner;
+package io.github.panxiaochao.banner;
 
-import com.github.panxiaochao.PxcVersion;
+import io.github.panxiaochao.PxcVersion;
 
 /**
  * @author Mr_LyPxc

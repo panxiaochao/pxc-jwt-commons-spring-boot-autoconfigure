@@ -1,10 +1,10 @@
-package com.github.panxiaochao.service.impl;
+package io.github.panxiaochao.service.impl;
 
-import com.github.panxiaochao.domain.Payload;
-import com.github.panxiaochao.properties.PxcJwtProperties;
-import com.github.panxiaochao.service.PxcJwtHandlerService;
-import com.github.panxiaochao.utils.JwtTokenUtils;
-import com.github.panxiaochao.utils.RsaUtils;
+import io.github.panxiaochao.domain.Payload;
+import io.github.panxiaochao.properties.PxcJwtProperties;
+import io.github.panxiaochao.service.PxcJwtHandlerService;
+import io.github.panxiaochao.utils.JwtTokenUtils;
+import io.github.panxiaochao.utils.RsaUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

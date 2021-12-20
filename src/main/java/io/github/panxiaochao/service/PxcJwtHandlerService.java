@@ -1,6 +1,6 @@
-package com.github.panxiaochao.service;
+package io.github.panxiaochao.service;
 
-import com.github.panxiaochao.domain.Payload;
+import io.github.panxiaochao.domain.Payload;
 
 import java.util.Map;
 

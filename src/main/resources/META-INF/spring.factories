@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.github.panxiaochao.config.PxcJwtAutoConfiguration
+  io.github.panxiaochao.config.PxcJwtAutoConfiguration
