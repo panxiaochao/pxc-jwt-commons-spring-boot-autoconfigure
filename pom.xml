@@ -208,8 +208,7 @@
         <tag>master</tag>
         <url>https://github.com/panxiaochao/pxc-jwt-commons-spring-boot-autoconfigure.git</url>
         <connection>scm:git:https://github.com/panxiaochao/pxc-jwt-commons-spring-boot-autoconfigure.git</connection>
-        <developerConnection>scm:git:https://github.com/panxiaochao/pxc-jwt-commons-spring-boot-autoconfigure.git
-        </developerConnection>
+        <developerConnection>scm:git:https://github.com/panxiaochao/pxc-jwt-commons-spring-boot-autoconfigure.git</developerConnection>
     </scm>
     <!-- ossrh -->
     <distributionManagement>
