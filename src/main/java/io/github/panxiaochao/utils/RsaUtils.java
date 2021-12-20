@@ -1,4 +1,4 @@
-package com.github.panxiaochao.utils;
+package io.github.panxiaochao.utils;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.ArrayUtils;

@@ -1,4 +1,4 @@
-package com.github.panxiaochao;
+package io.github.panxiaochao;
 
 /**
  * @author Mr_LyPxc

@@ -1,4 +1,4 @@
-package com.github.panxiaochao.utils;
+package io.github.panxiaochao.utils;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.JsonProcessingException;

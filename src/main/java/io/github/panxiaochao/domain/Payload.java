@@ -1,4 +1,4 @@
-package com.github.panxiaochao.domain;
+package io.github.panxiaochao.domain;
 
 import java.util.Date;
 

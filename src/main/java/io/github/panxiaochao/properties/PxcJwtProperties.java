@@ -1,7 +1,7 @@
-package com.github.panxiaochao.properties;
+package io.github.panxiaochao.properties;
 
-import com.github.panxiaochao.banner.PxcJwtBanner;
-import com.github.panxiaochao.utils.RsaUtils;
+import io.github.panxiaochao.banner.PxcJwtBanner;
+import io.github.panxiaochao.utils.RsaUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
