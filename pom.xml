@@ -8,7 +8,7 @@
         <version>2.3.12.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.github.panxiaochao</groupId>
+    <groupId>io.github.panxiaochao</groupId>
     <artifactId>pxc-jwt-commons-spring-boot-autoconfigure</artifactId>
     <version>1.0.0</version>
     <name>pxc-jwt-commons-spring-boot-autoconfigure</name>
@@ -208,13 +208,14 @@
         <tag>master</tag>
         <url>https://github.com/panxiaochao/pxc-jwt-commons-spring-boot-autoconfigure.git</url>
         <connection>scm:git:https://github.com/panxiaochao/pxc-jwt-commons-spring-boot-autoconfigure.git</connection>
-        <developerConnection>scm:git:https://github.com/panxiaochao/pxc-jwt-commons-spring-boot-autoconfigure.git</developerConnection>
+        <developerConnection>scm:git:https://github.com/panxiaochao/pxc-jwt-commons-spring-boot-autoconfigure.git
+        </developerConnection>
     </scm>
     <!-- ossrh -->
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </snapshotRepository>
         <repository>
             <id>ossrh</id>
@@ -273,7 +274,7 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <docencoding>${project.build.sourceEncoding}</docencoding>
                     <!-- TODO 临时解决不规范的javadoc生成报错,后面要规范化后把这行去掉 -->
-                    <!-- <additionalparam>-Xdoclint:none</additionalparam> -->
+                    <additionalJOption>-Xdoclint:none</additionalJOption>
                 </configuration>
                 <executions>
                     <execution>
