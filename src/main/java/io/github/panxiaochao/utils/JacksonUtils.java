@@ -28,7 +28,6 @@ import java.util.Map;
 import java.util.TimeZone;
 
 /**
- *
  * @author Mr_LyPxc
  */
 public class JacksonUtils {
@@ -80,7 +79,7 @@ public class JacksonUtils {
     }
 
     /**
-     * @param obj
+     * @param obj 对象
      * @return
      */
     public static String toString(Object obj) {
@@ -99,10 +98,10 @@ public class JacksonUtils {
     }
 
     /**
-     * @param json
-     * @param tClass
-     * @param <T>
-     * @return
+     * @param json   json
+     * @param tClass class
+     * @param <T>    T类型
+     * @return T类型
      */
     public static <T> T toBean(String json, Class<T> tClass) {
         try {
@@ -114,10 +113,10 @@ public class JacksonUtils {
     }
 
     /**
-     * @param inputStream
-     * @param tClass
-     * @param <T>
-     * @return
+     * @param inputStream 流
+     * @param tClass      class
+     * @param <T>         T类型
+     * @return T类型
      */
     public static <T> T toBean(InputStream inputStream, Class<T> tClass) {
         try {
@@ -129,10 +128,10 @@ public class JacksonUtils {
     }
 
     /**
-     * @param bytes
-     * @param tClass
-     * @param <T>
-     * @return
+     * @param bytes  字节
+     * @param tClass class
+     * @param <T>    T类型
+     * @return T类型
      */
     public static <T> T toBean(byte[] bytes, Class<T> tClass) {
         try {
@@ -144,10 +143,10 @@ public class JacksonUtils {
     }
 
     /**
-     * @param json
-     * @param eClass
-     * @param <E>
-     * @return
+     * @param json   json
+     * @param eClass class
+     * @param <E>    E
+     * @return E
      */
     public static <E> List<E> toList(String json, Class<E> eClass) {
         try {
@@ -159,9 +158,9 @@ public class JacksonUtils {
     }
 
     /**
-     * @param json
-     * @param <T>
-     * @return
+     * @param json json
+     * @param <T>  T类型
+     * @return T类型
      */
     public static <T> T toMap(String json) {
         try {
@@ -174,12 +173,12 @@ public class JacksonUtils {
     }
 
     /**
-     * @param json
-     * @param kClass
-     * @param vClass
-     * @param <K>
-     * @param <V>
-     * @return
+     * @param json   json
+     * @param kClass class
+     * @param vClass class
+     * @param <K>    K
+     * @param <V>    V
+     * @return <K, V>
      */
     public static <K, V> Map<K, V> toMap(String json, Class<K> kClass, Class<V> vClass) {
         try {
@@ -191,10 +190,10 @@ public class JacksonUtils {
     }
 
     /**
-     * @param json
-     * @param type
-     * @param <T>
-     * @return
+     * @param json json
+     * @param type type
+     * @param <T>  T类型
+     * @return T类型
      */
     public static <T> T nativeRead(String json, TypeReference<T> type) {
         try {

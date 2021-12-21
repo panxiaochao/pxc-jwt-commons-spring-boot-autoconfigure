@@ -27,7 +27,7 @@ public class PxcJwtAutoConfiguration {
     private PxcJwtProperties pxcJwtProperties;
 
     /**
-     * @return
+     * @return PxcJwtHandlerService
      */
     @Bean
     @ConditionalOnMissingBean

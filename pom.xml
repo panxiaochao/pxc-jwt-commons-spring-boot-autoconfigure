@@ -10,7 +10,7 @@
     </parent>
     <groupId>io.github.panxiaochao</groupId>
     <artifactId>pxc-jwt-commons-spring-boot-autoconfigure</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>pxc-jwt-commons-spring-boot-autoconfigure</name>
     <url>https://github.com/panxiaochao/pxc-jwt-commons-spring-boot-autoconfigure</url>
     <description>pxc-jwt-commons-spring-boot-autoconfigure</description>
@@ -215,11 +215,11 @@
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
         </snapshotRepository>
         <repository>
             <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
     <!-- 开发者 -->
@@ -256,6 +256,7 @@
                 </configuration>
                 <executions>
                     <execution>
+                        <id>attach-javadocs</id>
                         <phase>package</phase>
                         <goals>
                             <goal>jar-no-fork</goal>

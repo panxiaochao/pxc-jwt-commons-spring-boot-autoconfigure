@@ -20,11 +20,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @Title RsaUtils.java
- * @Description SHA256withRSA 工具类
- * @Author Lypxc
- * @Date 2021年10月20日
- * @Version 1.0
+ * @title RsaUtils.java
+ * @description SHA256withRSA 工具类
+ * @author Lypxc
+ * @date 2021年10月20日
+ * @version 1.0
  */
 public class RsaUtils {
     private static final Logger logger = LoggerFactory.getLogger(RsaUtils.class);
@@ -52,7 +52,7 @@ public class RsaUtils {
     /**
      * 生成密钥对：Base64 转码的字符串
      *
-     * @return
+     * @return Map<String, String>
      */
     public static Map<String, String> initKeyBase64Str() throws Exception {
         return initKeyBase64Str(SERCET);
@@ -62,8 +62,8 @@ public class RsaUtils {
      * 生成密钥对：Base64 转码的字符串
      *
      * @param seed
-     * @return
-     * @throws Exception
+     * @return Map<String, String>
+     * @throws Exception 错误
      */
     public static Map<String, String> initKeyBase64Str(String seed) throws Exception {
         Map<String, String> map = new HashMap<>(2);
@@ -79,7 +79,7 @@ public class RsaUtils {
     /**
      * 生成默认密钥
      *
-     * @return 密钥对象
+     * @return Map<String, Key>
      */
     private static Map<String, Key> initKey() throws Exception {
         return initKey(DEFAULT_SEED);
@@ -89,7 +89,7 @@ public class RsaUtils {
      * 生成密钥对：若seed为null，那么结果是随机的；若seed不为null且固定，那么结果也是固定的；
      *
      * @param seed 种子
-     * @return 密钥对象
+     * @return Map<String, Key>
      */
     private static Map<String, Key> initKey(String seed) throws Exception {
         KeyPairGenerator keygen = KeyPairGenerator.getInstance(KEY_ALGORITHM);
@@ -120,7 +120,7 @@ public class RsaUtils {
      * 获取公钥 PublicKey 信息
      *
      * @param publicKeyStr 公钥
-     * @return
+     * @return PublicKey
      */
     public static PublicKey getPublicKey(String publicKeyStr) {
         PublicKey publicKey = null;
@@ -146,8 +146,8 @@ public class RsaUtils {
      * 获取私钥
      *
      * @param privateKeyStr 私钥的字节形式
-     * @return
-     * @throws Exception
+     * @return PrivateKey
+     * @throws Exception 错误
      */
     public static PrivateKey getPrivateKey(String privateKeyStr) {
         PrivateKey privateKey = null;
@@ -174,7 +174,7 @@ public class RsaUtils {
      *
      * @param str       加密字符串
      * @param publicKey 公钥
-     * @return
+     * @return String
      */
     public static String encrypt(String str, String publicKey) throws Exception {
         // base64编码的公钥
@@ -191,9 +191,11 @@ public class RsaUtils {
     /**
      * 公钥加密，任意 PublicKey 对象
      *
-     * @param publicKey
-     * @param encryptData
-     * @param encode
+     * @param publicKey   publicKey
+     * @param encryptData encryptData
+     * @param encode      encode
+     * @return String
+     * @throws Exception 错误
      */
     public static String encrypt(PublicKey publicKey, String encryptData, String encode) throws Exception {
         if (publicKey == null) {
@@ -215,7 +217,7 @@ public class RsaUtils {
      *
      * @param str        加密字符串
      * @param privateKey 私钥
-     * @return
+     * @return String
      */
     public static String decrypt(String str, String privateKey) throws Exception {
         // 64位解码加密后的字符串
@@ -236,7 +238,7 @@ public class RsaUtils {
      *
      * @param str       加密字符串
      * @param publicKey 公钥
-     * @return 密文
+     * @return String
      */
     public static String encryptByPublicKey(String str, String publicKey) throws Exception {
         // base64编码的公钥
@@ -264,7 +266,7 @@ public class RsaUtils {
      *
      * @param encryStr   加密字符串
      * @param privateKey 私钥
-     * @return 明文
+     * @return String
      */
     public static String decryptByPrivateKey(String encryStr, String privateKey) throws Exception {
         // base64编码的私钥
@@ -290,7 +292,7 @@ public class RsaUtils {
      * BASE64Encoder 加密
      *
      * @param data 要加密的数据
-     * @return 加密后的字符串
+     * @return String
      */
     private static String encryptBASE64(byte[] data) {
         return new String(Base64.encodeBase64(data));
@@ -300,7 +302,7 @@ public class RsaUtils {
      * BASE64Encoder 解密
      *
      * @param data 要解密的数据
-     * @return 解密后的字节
+     * @return String
      */
     private static byte[] decryptBASE64(String data) {
         return Base64.decodeBase64(data);
@@ -314,7 +316,7 @@ public class RsaUtils {
      * @param content    报文内容
      * @param privateKey 私钥
      * @param encode     编码
-     * @return
+     * @return String
      */
     public static String doSign(String content, String privateKey, String encode) {
         try {
@@ -341,7 +343,7 @@ public class RsaUtils {
      * @param signed    签名信息
      * @param publicKey 公钥
      * @param encode    编码格式
-     * @return
+     * @return String
      */
     public static boolean doCheck(String content, String signed, PublicKey publicKey, String encode) {
         try {
@@ -364,6 +366,7 @@ public class RsaUtils {
      * @param publicKeyFilename  公钥文件路径
      * @param privateKeyFilename 私钥文件路径
      * @param seed               生成密钥的密文
+     * @throws Exception 错误
      */
     public static void generateKey(String publicKeyFilename, String privateKeyFilename, String seed) throws Exception {
         KeyPairGenerator keygen = KeyPairGenerator.getInstance(KEY_ALGORITHM);
@@ -388,9 +391,8 @@ public class RsaUtils {
     }
 
     /**
-     *
-     * @param fileName
-     * @return
+     * @param fileName 文件名
+     * @return byte[]
      * @throws IOException
      */
     private static byte[] readFile(String fileName) throws IOException {
@@ -398,10 +400,9 @@ public class RsaUtils {
     }
 
     /**
-     *
-     * @param destPath
-     * @param bytes
-     * @throws IOException
+     * @param destPath 输出路径
+     * @param bytes    bytes
+     * @throws IOException 错误
      */
     private static void writeFile(String destPath, byte[] bytes) throws IOException {
         File dest = new File(destPath);

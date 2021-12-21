@@ -28,7 +28,7 @@ public class JwtTokenUtils {
      * @param subject    登录用户
      * @param object     载荷中的数据
      * @param privateKey 私钥
-     * @return
+     * @return String
      */
     public static String generateTokenExpireInDefault(String subject, Object object, PrivateKey privateKey) {
         return generateTokenExpireInHours(subject, object, privateKey, JwtConstants.ONE_HOUR);
@@ -41,7 +41,7 @@ public class JwtTokenUtils {
      * @param object     载荷中的数据
      * @param privateKey 私钥
      * @param hours      过期时间，单位小时
-     * @return
+     * @return String
      */
     public static String generateTokenExpireInHours(String subject, Object object, PrivateKey privateKey, long hours) {
         return generateTokenExpireInMinutes(subject, object, privateKey, hours * 60);
@@ -54,7 +54,7 @@ public class JwtTokenUtils {
      * @param object     载荷中的数据
      * @param privateKey 私钥
      * @param minutes    过期时间，单位分钟
-     * @return
+     * @return String
      */
     public static String generateTokenExpireInMinutes(String subject, Object object, PrivateKey privateKey,
                                                       long minutes) {
@@ -68,7 +68,7 @@ public class JwtTokenUtils {
      * @param object     载荷中的数据
      * @param privateKey 私钥
      * @param seconds    过期时间，单位秒
-     * @return
+     * @return String
      */
     public static String generateTokenExpireInSeconds(String subject, Object object, PrivateKey privateKey,
                                                       long seconds) {
@@ -123,7 +123,7 @@ public class JwtTokenUtils {
     /**
      * 生产唯一ID
      *
-     * @return
+     * @return String
      */
     private static String createJWTID() {
         return Base64.encodeBase64String(UUID.randomUUID().toString().getBytes());
@@ -134,7 +134,7 @@ public class JwtTokenUtils {
      *
      * @param token
      * @param publicKey
-     * @return
+     * @return String
      */
     public static String getSubject(String token, PublicKey publicKey) {
         Claims body = parserToken(token, publicKey);
@@ -148,7 +148,7 @@ public class JwtTokenUtils {
      * 验证token是否合法
      *
      * @param token
-     * @return
+     * @return boolean
      */
     public static boolean verifierToken(String token, PublicKey publicKey) {
         Claims body = parserToken(token, publicKey);
@@ -162,7 +162,7 @@ public class JwtTokenUtils {
      * 刷新 token
      *
      * @param token
-     * @return
+     * @return String
      */
     public static String refreshToken(String token, PublicKey publicKey, PrivateKey privateKey, long seconds) {
         Claims body = parserToken(token, publicKey);
@@ -177,7 +177,7 @@ public class JwtTokenUtils {
      *
      * @param token     用户请求中的令牌
      * @param publicKey 公钥
-     * @return
+     * @return boolean
      */
     public static boolean isTokenExpired(String token, PublicKey publicKey) {
         Claims body = parserToken(token, publicKey);
@@ -195,7 +195,7 @@ public class JwtTokenUtils {
      * @param token     用户请求中的令牌
      * @param publicKey 公钥
      * @param userType  用户类型
-     * @return
+     * @return <T>
      */
     public static <T> Payload<T> getBodyFromToken(String token, PublicKey publicKey, Class<T> userType) {
         Claims body = parserToken(token, publicKey);
@@ -216,7 +216,7 @@ public class JwtTokenUtils {
      *
      * @param token
      * @param publicKey
-     * @return
+     * @return Payload<Map < String, Object>>
      */
     public static Payload<Map<String, Object>> getBodyFromToken(String token, PublicKey publicKey) {
         Claims body = parserToken(token, publicKey);

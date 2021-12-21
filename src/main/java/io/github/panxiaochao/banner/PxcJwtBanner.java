@@ -23,7 +23,7 @@ public class PxcJwtBanner {
      * 生成字符串网址：https://www.bootschool.net/ascii <br/>
      * 字体选择：stick-letters
      *
-     * @return
+     * @return String
      */
     private String bannerInfo(String version) {
         StringBuilder textBuilder = new StringBuilder();
